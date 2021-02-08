@@ -14,7 +14,9 @@ namespace Day1
 
             ReportRepair reportRepair = new ReportRepair();
 
-            Console.WriteLine(reportRepair.CalcProduct(inputs));
+            Console.WriteLine(reportRepair.CalcProduct2Numbers(inputs));
+
+            Console.WriteLine(reportRepair.CalcProduct3Numbers(inputs));
         }
     }
 }

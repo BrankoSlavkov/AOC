@@ -4,7 +4,7 @@ namespace Day1
 {
     public class ReportRepair
     {
-        public int CalcProduct(List<int> inputs)
+        public int CalcProduct2Numbers(List<int> inputs)
         {
             for (int i = 0; i < inputs.Count - 1; i++)
             {
@@ -17,6 +17,34 @@ namespace Day1
                     if (firstNumber + secondNumber == 2020 && firstNumber != 299)
                     {
                         return firstNumber * secondNumber;
+                    }
+
+                }
+
+            }
+
+            return -1;
+        }
+
+        public int CalcProduct3Numbers(List<int> inputs)
+        {
+            for (int i = 0; i < inputs.Count - 2; i++)
+            {
+                int firstNumber = inputs[i];
+
+                for (int j = i + 1; j < inputs.Count - 1; j++)
+                {
+                    int secondNumber = inputs[j];
+
+                    for (int k = j + 1; k < inputs.Count; k++)
+                    {
+                        int thirdNumber = inputs[k];
+
+                        if (firstNumber + secondNumber + thirdNumber == 2020 && firstNumber != 299
+                            && firstNumber != 979 && firstNumber != 366 && firstNumber != 675)
+                        {
+                            return firstNumber * secondNumber * thirdNumber;
+                        }
                     }
 
                 }
