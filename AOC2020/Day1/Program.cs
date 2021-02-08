@@ -1,4 +1,5 @@
 ﻿using AOC.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Day1
@@ -10,6 +11,10 @@ namespace Day1
             List<int> inputs = new List<int>();
 
             inputs.GetInputs("inputs.txt");
+
+            ReportRepair reportRepair = new ReportRepair();
+
+            Console.WriteLine(reportRepair.CalcProduct(inputs));
         }
     }
 }
