@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AOC.Common;
+using System.Collections.Generic;
 
 namespace Day1
 {
@@ -6,7 +7,9 @@ namespace Day1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<int> inputs = new List<int>();
+
+            inputs.GetInputs("inputs.txt");
         }
     }
 }
