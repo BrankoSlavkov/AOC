@@ -14,7 +14,8 @@ namespace Day1
                 {
                     int secondNumber = inputs[j];
 
-                    if (firstNumber + secondNumber == 2020 && firstNumber != 299)
+                    if (firstNumber + secondNumber == 2020 &&
+                        IsNotUsed(firstNumber) && IsNotUsed(secondNumber))
                     {
                         return firstNumber * secondNumber;
                     }
@@ -22,6 +23,8 @@ namespace Day1
                 }
 
             }
+
+            static bool IsNotUsed(int number) => number != 299 && number != 1721;
 
             return -1;
         }
@@ -40,8 +43,10 @@ namespace Day1
                     {
                         int thirdNumber = inputs[k];
 
-                        if (firstNumber + secondNumber + thirdNumber == 2020 && firstNumber != 299
-                            && firstNumber != 979 && firstNumber != 366 && firstNumber != 675)
+                        if (firstNumber + secondNumber + thirdNumber == 2020 &&
+                            IsNotUsed(firstNumber) &&
+                            IsNotUsed(secondNumber) &&
+                            IsNotUsed(thirdNumber))
                         {
                             return firstNumber * secondNumber * thirdNumber;
                         }
@@ -51,7 +56,11 @@ namespace Day1
 
             }
 
+            static bool IsNotUsed(int number) => number != 979 && number != 366 && number != 675;
+
             return -1;
         }
+
+
     }
 }
