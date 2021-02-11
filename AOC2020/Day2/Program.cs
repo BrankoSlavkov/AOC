@@ -11,7 +11,7 @@ namespace Day2
 
             List<string> inputs = new List<string>();
 
-            inputs.GetInputs("Inputs.txt");
+            inputs.GetInputs();
 
             PasswordPhilosophy passwordPhilosophy = new PasswordPhilosophy(inputs);
 

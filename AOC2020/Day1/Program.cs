@@ -10,12 +10,11 @@ namespace Day1
         {
             List<int> inputs = new List<int>();
 
-            inputs.GetInputs("inputs.txt");
+            inputs.GetInputs();
 
             ReportRepair reportRepair = new ReportRepair();
 
             Console.WriteLine(reportRepair.CalcProduct2Numbers(inputs));
-
             Console.WriteLine(reportRepair.CalcProduct3Numbers(inputs));
         }
     }
