@@ -1,5 +1,5 @@
-﻿using System;
-using AOC.Common;
+﻿using AOC.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Day3
