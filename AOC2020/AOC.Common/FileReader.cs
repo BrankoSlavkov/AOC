@@ -6,8 +6,9 @@ namespace AOC.Common
 {
     public static class FileReader
     {
-        public static IEnumerable<T> GetInputs<T>(this List<T> inputs)
+        public static List<T> GetInputs<T>()
         {
+            List<T> inputs = new List<T>();
             // File should exist in project directory
             string filePath = $"../../../inputs.txt";
 

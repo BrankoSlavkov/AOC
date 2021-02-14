@@ -9,9 +9,7 @@ namespace Day2
         static void Main(string[] args)
         {
 
-            List<string> inputs = new List<string>();
-
-            inputs.GetInputs();
+            List<string> inputs = FileReader.GetInputs<string>();
 
             PasswordPhilosophy passwordPhilosophy = new PasswordPhilosophy(inputs);
 

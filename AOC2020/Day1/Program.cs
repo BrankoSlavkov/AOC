@@ -8,9 +8,7 @@ namespace Day1
     {
         static void Main(string[] args)
         {
-            List<int> inputs = new List<int>();
-
-            inputs.GetInputs();
+            List<int> inputs = FileReader.GetInputs<int>();
 
             ReportRepair reportRepair = new ReportRepair();
 

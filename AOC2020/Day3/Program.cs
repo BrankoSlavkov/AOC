@@ -8,10 +8,9 @@ namespace Day3
     {
         static void Main(string[] args)
         {
-            List<string> inputs = new List<string>();
 
             Toboggan toboggan = new Toboggan();
-            inputs.GetInputs();
+            List<string> inputs = FileReader.GetInputs<string>();
 
             Console.WriteLine($"Right 1, down 1 -> {toboggan.TotalTreesEncountered(inputs, 1)}");
             Console.WriteLine($"Right 3, down 1 -> {toboggan.TotalTreesEncountered(inputs, 3)}");
