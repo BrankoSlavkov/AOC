@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AOC.Common;
+using System;
+using System.Collections.Generic;
 
 namespace Day6
 {
@@ -6,7 +8,10 @@ namespace Day6
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<string> inputs = FileReader.GetInputsWithBlankLines<string>();
+            CountYes totalYes = new CountYes();
+
+            Console.WriteLine(totalYes.GetTotalYes(inputs));
         }
     }
 }
