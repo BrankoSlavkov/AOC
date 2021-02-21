@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AOC.Common;
+using System;
+using System.Collections.Generic;
 
 namespace Day5
 {
@@ -6,7 +8,10 @@ namespace Day5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<string> inputs = FileReader.GetInputs<string>();
+            SeatID seatId = new SeatID();
+
+            Console.WriteLine(seatId.GetHighestID(inputs));
         }
     }
 }
