@@ -12,6 +12,7 @@ namespace Day5
             SeatID seatId = new SeatID();
 
             Console.WriteLine(seatId.GetHighestID(inputs));
+            Console.WriteLine(seatId.GetMySeat());
         }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Day5
 {
     class SeatID
     {
+        // create 1023 open seats
+        private readonly List<int> _openSeats = Enumerable.Range(0, 128 * 8 - 1).ToList();
+
         public float GetHighestID(List<string> inputs)
         {
             int highestSeatId = int.MinValue;
@@ -17,9 +21,25 @@ namespace Day5
                 {
                     highestSeatId = calculatedId;
                 }
+
+                // remove claimed seat
+                _openSeats.Remove(calculatedId);
             }
 
             return highestSeatId;
+        }
+
+        public int GetMySeat()
+        {
+            for (int i = 0; i < _openSeats.Count - 1; i++)
+            {
+                if (_openSeats[i + 1] - _openSeats[i] != 1)
+                {
+                    return _openSeats[i + 1];
+                }
+            }
+
+            return -1;
         }
 
 
