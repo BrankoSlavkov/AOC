@@ -6,57 +6,32 @@ namespace AOC.Common
 {
     public static class FileReader
     {
-        public static List<T> GetInputs<T>()
+        // File should exist in project directory
+        private const string _filePath = "../../../inputs.txt";
+        public static List<T> GetInputs<T>(bool isReadWithoutNewLine = true)
         {
             List<T> inputs = new List<T>();
-            // File should exist in project directory
-            string filePath = $"../../../inputs.txt";
 
-            if (File.Exists(filePath))
+            if (File.Exists(_filePath))
             {
-                using var reader = File.OpenText(filePath);
+                using var reader = File.OpenText(_filePath);
                 string line = string.Empty;
 
                 while (line != null)
                 {
                     line = reader.ReadLine();
 
-                    if (!string.IsNullOrWhiteSpace(line))
+                    if (isReadWithoutNewLine && string.IsNullOrWhiteSpace(line))
                     {
-                        T readLine = (T)Convert.ChangeType(line, typeof(T));
-                        inputs.Add(readLine);
+                        continue;
                     }
-                }
-            }
 
-            return inputs;
-        }
-
-        public static List<T> GetInputsWithBlankLines<T>()
-        {
-            List<T> inputs = new List<T>();
-            // File should exist in project directory
-            string filePath = $"../../../inputs.txt";
-
-            if (File.Exists(filePath))
-            {
-                using var reader = File.OpenText(filePath);
-                string line = string.Empty;
-
-                while (line != null)
-                {
-                    line = reader.ReadLine();
-
-                    //if (!string.IsNullOrWhiteSpace(line))
-                    //{
                     T readLine = (T)Convert.ChangeType(line, typeof(T));
                     inputs.Add(readLine);
-                    //}
                 }
             }
 
             return inputs;
         }
-
     }
 }
